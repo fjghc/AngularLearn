@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -14,7 +15,8 @@ export class HeroesComponent implements OnInit {
   // 英雄列表
   heroes: Hero[];
   // 构造器注入HeroService
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService,
+    private messageService: MessageService) { }
 
   ngOnInit() {
     this.getAllHeroes();
@@ -28,6 +30,7 @@ export class HeroesComponent implements OnInit {
 
   // 选择当前Hero
   onSelect(hero) {
+    this.messageService.add(`Selected Hero:${hero.name}`);
     this.selectedHero = hero;
   }
 }
