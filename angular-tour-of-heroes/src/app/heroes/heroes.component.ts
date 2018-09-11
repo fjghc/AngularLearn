@@ -10,6 +10,7 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent implements OnInit {
 
+  heroName: string;
 
   // 英雄列表
   heroes: Hero[];
@@ -25,6 +26,22 @@ export class HeroesComponent implements OnInit {
   // 该方法返回的是一个可观察对象，（异步操作）
   getAllHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+  }
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return;
+    }
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
+  }
+  // 删除
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(b => b !== hero);
+    this.heroService.deleteHero(hero).subscribe();    )
   }
 
 
