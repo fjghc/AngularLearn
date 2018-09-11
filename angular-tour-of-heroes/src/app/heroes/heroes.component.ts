@@ -10,7 +10,6 @@ import { MessageService } from '../message.service';
 })
 export class HeroesComponent implements OnInit {
 
-  selectedHero: Hero;
 
   // 英雄列表
   heroes: Hero[];
@@ -28,9 +27,5 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
-  // 选择当前Hero
-  onSelect(hero) {
-    this.messageService.add(`Selected Hero:${hero.name}`);
-    this.selectedHero = hero;
-  }
+
 }

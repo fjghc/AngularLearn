@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+# 添加路由模块
+
+>Angular 的最佳实践之一就是在一个独立的顶级模块中加载和配置路由器，它专注于路由功能，然后由根模块 AppModule 导入它。
+按照惯例，这个模块类的名字叫做 APPRoutingModule，并且位于 src/app 下的 app-routing.module.ts 文件中。
+
+使用 CLI 生成它。
+```
+ng generate module app-routing --flat --module=app
+```
+>--flat 把这个文件放进了 src/app 中，而不是单独的目录中。
+--module=app 告诉 CLI 把它注册到 AppModule 的 imports 数组中
