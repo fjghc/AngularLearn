@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label class="control-lable">
+    <input type="text" [formControl]="name" class="form-control">
+  </label>
+</div>
+<div>
+  Value:{{name.value}}
+</div>
+<button (click)="updateName()">更新名称</button>

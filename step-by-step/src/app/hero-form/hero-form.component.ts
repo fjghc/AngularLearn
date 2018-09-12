@@ -1,5 +1,3 @@
-import { Hero } from './../hero';
-
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 
@@ -24,8 +22,8 @@ export class HeroFormComponent implements OnInit {
 
   onSubmit() { this.summitted = true; }
 
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  newHero(): void {
+    this.model = new Hero(42, '', '');
+  }
 
 }
