@@ -29,8 +29,8 @@ export class StartupService {
     ).pipe(
       // 接收其他拦截器后产生的异常消息
       catchError(([appData]) => {
-          resolve(null);
-          return [appData];
+        resolve(null);
+        return [appData];
       })
     ).subscribe(([appData]) => {
 
@@ -47,10 +47,10 @@ export class StartupService {
       // 设置页面标题的后缀
       this.titleService.suffix = res.app.name;
     },
-    () => { },
-    () => {
-      resolve(null);
-    });
+      () => { },
+      () => {
+        resolve(null);
+      });
   }
 
   private viaMock(resolve: any, reject: any) {
@@ -80,7 +80,7 @@ export class StartupService {
     // 初始化菜单
     this.menuService.add([
       {
-        text: '主导航',
+        text: '后台菜单',
         group: true,
         children: [
           {
@@ -92,6 +92,11 @@ export class StartupService {
             text: '快捷菜单',
             icon: 'anticon anticon-rocket',
             shortcutRoot: true
+          },
+          {
+            text: '角色管理',
+            link: '/role',
+            icon: 'anticon anticon-rocket'
           }
         ]
       }
