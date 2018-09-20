@@ -1,0 +1,16 @@
+<div class="full-screen page-content">
+  <div class="wrapper">
+    <img src="./assets/img/logo.png" alt="" class="logo-img">
+    <div class="text-wrapper">
+      <h1 class="title-text">
+        Today
+      </h1>
+      <input nz-input [(ngModel)]="username" #usernameInput placeholder="请输入你喜欢的名字">
+      <button (click)="completeSetup()" nz-button nzType="primary" [disabled]=!usernameInput.value>开始</button>
+      <div class="copy-right">
+        Copyright © 2018 Wendell Hu
+      </div>
+
+    </div>
+  </div>
+</div>
