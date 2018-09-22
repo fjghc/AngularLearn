@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #001529;
+}
+.to-edge {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
