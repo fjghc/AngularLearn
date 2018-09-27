@@ -7,6 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { LeftControlComponent } from './left-control/left-control.component';
 import { ListComponent } from './left-control/list/list.component';
+import { RightControlComponent } from './right-control/right-control.component';
+import { HeaderComponent } from './right-control/header/header.component';
+import { QuickAddComponent } from './right-control/quick-add/quick-add.component';
+import { TodoComponent } from './right-control/todo/todo.component';
 
 @NgModule({
   imports: [
@@ -15,6 +19,13 @@ import { ListComponent } from './left-control/list/list.component';
     FormsModule,
     NgZorroAntdModule
   ],
-  declarations: [MainComponent, LeftControlComponent, ListComponent]
+  declarations: [
+    MainComponent,
+    LeftControlComponent,
+    ListComponent,
+    RightControlComponent,
+    HeaderComponent,
+    QuickAddComponent,
+    TodoComponent]
 })
 export class MainModule { }
