@@ -1,3 +1,4 @@
+import { Person } from './models/Person';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+
+
+  title = 'My Frist App';
+  me: Person = {
+    name: 'Crashol',
+    age: 12
+  };
+
+
 }

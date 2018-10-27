@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h3>用户列表</h3>
+      <p>
+        {{message}}
+      </p>
+      <ul>
+        <li *ngFor="let item of persons">
+          The person {{ item.name }} is {{ item.age}} old;
+        </li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <div>
+        <div class="form-group">
+          <label for="">请输入姓名</label>
+          <input type="text" #name class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">请输入年龄</label>
+          <input type="number" #age class="form-control">
+        </div>
+        <button class="btn btn-primary" (click)="addPerson(name.value,age.value)">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
