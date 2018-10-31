@@ -22,7 +22,11 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroes = this.heroSerivce.getHeros();
+    /* 返回可观测对象 ,异步返回*/
+    this.heroSerivce.getHeros()
+      .subscribe(heroes => {
+        this.heroes = heroes;
+      });
   }
 
   onSelect(hero: Hero): void {

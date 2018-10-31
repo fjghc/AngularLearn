@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
+/* 引入Rxjs */
+import { Observable, of } from 'rxjs';
 
 /* 添加英雄服务类，并将该服务注入到根,任何只组件都可以通过依赖注入拿到该服务 */
 @Injectable({
@@ -9,8 +11,8 @@ import { HEROES } from './mock-heroes';
 export class HeroService {
 
   constructor() { }
-
-  getHeros(): Hero[] {
-    return HEROES;
+  /*  模拟http，返回 可观察对象流 */
+  getHeros(): Observable<Hero[]> {
+    return of(HEROES);
   }
 }
