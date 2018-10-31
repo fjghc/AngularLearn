@@ -4,17 +4,5 @@
     <span class="badge">{{hero.id}}</span>{{hero.name}}
   </li>
 </ul>
-<!-- 当刚开始的时候，selectHero为空 -->
-<div *ngIf="selectHero">
-  <h2>
-    {{selectHero.name |uppercase}} Details
-  </h2>
-  <div>
-    <span>id:</span>{{selectHero.name}}
-  </div>
-  <div>
-    <label for="">
-      <input type="text" [(ngModel)]="selectHero.name" placeholder="name">
-    </label>
-  </div>
-</div>
+<!-- 通过属性将hero传递给 hero-detail组件 -->
+<app-hero-detail [hero]="selectHero"></app-hero-detail>

@@ -1,0 +1,14 @@
+<!-- 当刚开始的时候，selectHero为空 -->
+<div *ngIf="hero">
+  <h2>
+    {{hero.name |uppercase}} Details
+  </h2>
+  <div>
+    <span>id:</span>{{hero.name}}
+  </div>
+  <div>
+    <label for="">
+      <input type="text" [(ngModel)]="hero.name" placeholder="name">
+    </label>
+  </div>
+</div>
