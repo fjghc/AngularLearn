@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HEROES } from '../mock-heroes';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -9,11 +10,19 @@ import { HEROES } from '../mock-heroes';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes = HEROES;
+  heroes: Hero[];
   selectHero: Hero;
-  constructor() { }
+  // 依赖注入 HeroService
+  constructor(private heroSerivce: HeroService) {
 
+  }
   ngOnInit() {
+    // 页面生命周期中调用
+    this.getHeroes();
+  }
+
+  getHeroes(): void {
+    this.heroes = this.heroSerivce.getHeros();
   }
 
   onSelect(hero: Hero): void {
