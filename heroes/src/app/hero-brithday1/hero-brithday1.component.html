@@ -1,0 +1,10 @@
+<p>
+  Hero Birthday is {{ brithday | date :'MM/dd/yy' }}
+</p>
+<p>
+  Hero Birthday is {{ brithday | date : format }}
+</p>
+<p>
+  Hero Birthday is {{ brithday | date : format | uppercase}}
+</p>
+<button (click)="toggerFormat()">format</button>

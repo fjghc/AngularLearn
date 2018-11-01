@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HighlightDirective } from './highlight.directive';
+import { HeroBrithday1Component } from './hero-brithday1/hero-brithday1.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HighlightDirective } from './highlight.directive';
     MessageComponent,
     DashboardComponent,
     HeroSearchComponent,
-    HighlightDirective
+    HighlightDirective,
+    HeroBrithday1Component
   ],
   imports: [
     BrowserModule,
