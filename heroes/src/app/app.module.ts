@@ -16,6 +16,8 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HighlightDirective } from './highlight.directive';
 import { HeroBrithday1Component } from './hero-brithday1/hero-brithday1.component';
+import { ExponentialStrengthPipe } from './exponential-strength.pipe';
+import { PowerBoosterComponent } from './power-booster/power-booster.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { HeroBrithday1Component } from './hero-brithday1/hero-brithday1.componen
     DashboardComponent,
     HeroSearchComponent,
     HighlightDirective,
-    HeroBrithday1Component
+    HeroBrithday1Component,
+    ExponentialStrengthPipe,
+    PowerBoosterComponent
   ],
   imports: [
     BrowserModule,
