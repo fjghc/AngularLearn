@@ -7,6 +7,15 @@
     Last Name:
     <input type="text" formControlName='lastName'>
   </label>
+  <!-- 添加嵌套表单 -->
+  <div formGroupName='address'>
+    <h3>Address</h3>
+    <label>Street: <input type='text' formControlName='street'></label>
+    <label>City: <input type='text' formControlName='city'></label>
+    <label>State: <input type='text' formControlName='state'></label>
+    <label>Zip: <input type='text' formControlName='zip'></label>
+  </div>
   <button type="submit" [disabled]='!profileForm.valid'>Submit</button>
-  
+  <button (click)="updateProfile();" >updateProfile</button>
+
 </form>

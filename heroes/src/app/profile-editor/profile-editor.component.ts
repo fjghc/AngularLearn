@@ -10,7 +10,14 @@ export class ProfileEditorComponent implements OnInit {
 
   profileForm = new FormGroup({
     firstName: new FormControl(''),
-    lastName: new FormControl('')
+    lastName: new FormControl(''),
+    address: new FormGroup({
+      street: new FormControl(''),
+      city: new FormControl(''),
+      state: new FormControl(''),
+      zip: new FormControl('')
+    })
+
   });
   constructor() { }
 
@@ -19,5 +26,14 @@ export class ProfileEditorComponent implements OnInit {
 
   onSubmit() {
     console.warn(this.profileForm.value);
+  }
+  /* 部分更新属性 */
+  updateProfile() {
+    this.profileForm.patchValue({
+      firstName: 'Nancy',
+      address: {
+        street: '123 Dddd Street'
+      }
+    });
   }
 }
