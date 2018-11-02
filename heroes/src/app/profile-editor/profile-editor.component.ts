@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 /* 引入表达验证 Validators */
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -18,8 +18,21 @@ export class ProfileEditorComponent implements OnInit {
       city: [''],
       state: [''],
       zip: ['']
-    })
+    }),
+    /* 添加FormArray */
+    aliases: this.fb.array([
+      this.fb.control('')
+    ])
   });
+
+  /* 通过属性获取aliases */
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
+  }
+
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
+  }
 
 
   /* 使用FromBuilder构建表单 */
