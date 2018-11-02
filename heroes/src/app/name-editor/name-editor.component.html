@@ -1,0 +1,6 @@
+<p>
+  Name Editor <input type="text" [formControl]='name'> 
+</p>
+<p>Name Value: {{ name.value }}</p>
+
+<button (click)="updateName();">Set Name Value</button>

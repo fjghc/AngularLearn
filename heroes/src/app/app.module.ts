@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 
@@ -19,6 +19,7 @@ import { HeroBrithday1Component } from './hero-brithday1/hero-brithday1.componen
 import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 import { PowerBoosterComponent } from './power-booster/power-booster.component';
 import { PowerBoostCalculatorComponent } from './power-boost-calculator/power-boost-calculator.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,15 @@ import { PowerBoostCalculatorComponent } from './power-boost-calculator/power-bo
     HeroBrithday1Component,
     ExponentialStrengthPipe,
     PowerBoosterComponent,
-    PowerBoostCalculatorComponent
+    PowerBoostCalculatorComponent,
+    NameEditorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [],
