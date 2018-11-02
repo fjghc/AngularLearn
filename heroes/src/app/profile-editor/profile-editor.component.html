@@ -15,7 +15,11 @@
     <label>State: <input type='text' formControlName='state'></label>
     <label>Zip: <input type='text' formControlName='zip'></label>
   </div>
+  <hr>
+  <p>
+    Form Status {{ profileForm.status}}
+  </p>
   <button type="submit" [disabled]='!profileForm.valid'>Submit</button>
-  <button (click)="updateProfile();" >updateProfile</button>
+  <button (click)="updateProfile();">updateProfile</button>
 
 </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+/* 引入表达验证 Validators */
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -9,7 +10,8 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 export class ProfileEditorComponent implements OnInit {
 
   profileForm = this.fb.group({
-    firstName: [''],
+    /* 添加表单验证Validators */
+    firstName: ['', Validators.required],
     lastName: [''],
     address: this.fb.group({
       street: [''],
