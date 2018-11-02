@@ -20,6 +20,7 @@ import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 import { PowerBoosterComponent } from './power-booster/power-booster.component';
 import { PowerBoostCalculatorComponent } from './power-boost-calculator/power-boost-calculator.component';
 import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NameEditorComponent } from './name-editor/name-editor.component';
     ExponentialStrengthPipe,
     PowerBoosterComponent,
     PowerBoostCalculatorComponent,
-    NameEditorComponent
+    NameEditorComponent,
+    ProfileEditorComponent
   ],
   imports: [
     BrowserModule,
