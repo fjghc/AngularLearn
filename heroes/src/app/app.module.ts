@@ -18,6 +18,7 @@ import { HighlightDirective } from './highlight.directive';
 import { HeroBrithday1Component } from './hero-brithday1/hero-brithday1.component';
 import { ExponentialStrengthPipe } from './exponential-strength.pipe';
 import { PowerBoosterComponent } from './power-booster/power-booster.component';
+import { PowerBoostCalculatorComponent } from './power-boost-calculator/power-boost-calculator.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PowerBoosterComponent } from './power-booster/power-booster.component';
     HighlightDirective,
     HeroBrithday1Component,
     ExponentialStrengthPipe,
-    PowerBoosterComponent
+    PowerBoosterComponent,
+    PowerBoostCalculatorComponent
   ],
   imports: [
     BrowserModule,
