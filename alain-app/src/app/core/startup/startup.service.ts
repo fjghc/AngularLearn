@@ -59,7 +59,7 @@ export class StartupService {
       resolve(null);
     });
   }
-  
+
   private viaMock(resolve: any, reject: any) {
     // const tokenData = this.tokenService.get();
     // if (!tokenData.token) {
@@ -97,6 +97,12 @@ export class StartupService {
           },
           {
             text: '快捷菜单',
+            icon: { type: 'icon', value: 'rocket' },
+            shortcutRoot: true
+          },
+          {
+            text: 'SysModule',
+            link: '/sys/log',
             icon: { type: 'icon', value: 'rocket' },
             shortcutRoot: true
           }

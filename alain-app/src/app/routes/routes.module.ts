@@ -1,3 +1,4 @@
+import { SysModule } from './sys/sys.module';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '@shared/shared.module';
@@ -32,7 +33,7 @@ const COMPONENTS = [
 const COMPONENTS_NOROUNT = [];
 
 @NgModule({
-  imports: [ SharedModule, RouteRoutingModule ],
+  imports: [ SharedModule, RouteRoutingModule],
   declarations: [
     ...COMPONENTS,
     ...COMPONENTS_NOROUNT
