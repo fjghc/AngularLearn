@@ -31,7 +31,6 @@ export class SysLogComponent implements OnInit {
       ]
     }
   ];
-
   constructor(private http: _HttpClient, private modal: ModalHelper) { }
 
   ngOnInit() { }

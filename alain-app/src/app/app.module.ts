@@ -1,7 +1,10 @@
+
 import { NgModule, LOCALE_ID, APP_INITIALIZER, Injector } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { NgxTinymceModule } from 'ngx-tinymce';
 
 // #region default language
 // 参考：https://ng-alain.com/docs/i18n
@@ -26,7 +29,7 @@ const LANG_PROVIDES = [
 
 // #region JSON Schema form (using @delon/form)
 import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';
-const FORM_MODULES = [ JsonSchemaModule ];
+const FORM_MODULES = [JsonSchemaModule];
 // #endregion
 
 
@@ -35,8 +38,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SimpleInterceptor } from '@delon/auth';
 import { DefaultInterceptor } from '@core/net/default.interceptor';
 const INTERCEPTOR_PROVIDES = [
-  { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true},
-  { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true}
+  { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true }
 ];
 // #endregion
 
@@ -82,7 +85,10 @@ import { LayoutModule } from './layout/layout.module';
     LayoutModule,
     RoutesModule,
     ...FORM_MODULES,
-    ...GLOBAL_THIRD_MDOULES
+    ...GLOBAL_THIRD_MDOULES,
+    NgxTinymceModule.forRoot({
+      baseURL: '//cdn.bootcss.com/tinymce/4.7.13/'
+    })
   ],
   providers: [
     ...LANG_PROVIDES,
