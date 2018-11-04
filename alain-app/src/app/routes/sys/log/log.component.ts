@@ -19,10 +19,29 @@ export class SysLogComponent implements OnInit {
   };
   @ViewChild('st') st: STComponent;
   columns: STColumn[] = [
-    { title: '编号', index: 'no' },
-    { title: '调用次数', type: 'number', index: 'callNo' },
+    {
+      title: '编号', index: 'no', type: 'checkbox',
+      selections: [
+        {
+          text: '小于100次',
+          select: (data: any[]) => data.forEach(item => item.checked = item.callNo <= 100),
+        },
+        {
+          text: '大于200次',
+          select: (data: any[]) => data.forEach(item => item.checked = item.callNo > 200),
+        }
+      ],
+    },
+    {
+      title: '调用次数', type: 'number', index: 'callNo',
+      sort: {
+        compare: (a, b) => a.callNo - b.callNo,
+      }
+    },
     { title: '头像', type: 'img', width: '50px', index: 'avatar' },
-    { title: '时间', type: 'date', index: 'updatedAt' },
+    {
+      title: '时间', type: 'date', index: 'updatedAt'
+    },
     {
       title: '',
       buttons: [
