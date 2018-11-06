@@ -105,6 +105,12 @@ export class StartupService {
             link: '/sys/log',
             icon: { type: 'icon', value: 'rocket' },
             shortcutRoot: true
+          },
+          {
+            text: 'Trade',
+            link: '/trade/list',
+            icon: { type: 'icon', value: 'rocket' },
+            shortcutRoot: true
           }
         ]
       }
