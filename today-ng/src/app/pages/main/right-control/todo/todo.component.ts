@@ -3,9 +3,10 @@ import { TodoService } from 'src/app/services/todo/todo.service';
 import { ListService } from './../../../../services/list/list.service';
 import { List } from 'src/domain/entities';
 import { Todo } from './../../../../../domain/entities';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, TemplateRef } from '@angular/core';
 import { Subject, combineLatest } from 'rxjs';
 import { floorToDate, getTodayTime } from '../../../../../utils/time';
+import { NzDropdownContextComponent, NzDropdownService } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-todo',
@@ -14,14 +15,17 @@ import { floorToDate, getTodayTime } from '../../../../../utils/time';
 })
 export class TodoComponent implements OnInit, OnDestroy {
 
+  private dropdown: NzDropdownContextComponent;
   private destory$ = new Subject();
+
   todos: Todo[] = [];
   lists: List[] = [];
   currentContextTodo: Todo;
 
   constructor(
     private listService: ListService,
-    private todoService: TodoService
+    private todoService: TodoService,
+    private dropdownService: NzDropdownService
   ) { }
 
   ngOnInit() {

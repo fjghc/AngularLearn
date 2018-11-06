@@ -5,6 +5,7 @@ import { TODOS } from '../local-storage.namespace';
 import { LocalStorageService } from '../local-storage.service';
 import { ListService } from '../list/list.service';
 import { Subject } from 'rxjs';
+import { RankBy } from 'src/domain/type';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,10 @@ export class TodoService {
 
   todo$ = new Subject<Todo[]>();
 
+  rank$ = new Subject<RankBy>();
+
   private todos: Todo[] = [];
+  private rank: RankBy = 'title';
 
   constructor(
     private listService: ListService,
@@ -24,10 +28,16 @@ export class TodoService {
 
   private broadCast(): void {
     this.todo$.next(this.todos);
+    this.rank$.next(this.rank);
   }
 
   private persist(): void {
     this.store.set(TODOS, this.todos);
+  }
+
+  toggerRank(r: RankBy): void {
+    this.rank = r;
+    this.rank$.next(r);
   }
 
   getAll(): void {
@@ -41,7 +51,7 @@ export class TodoService {
   }
 
   getByUUID(uuid: string): Todo | null {
-    return this.todos.filter((todo: Todo) => todo._id === uuid)[ 0 ] || null;
+    return this.todos.filter((todo: Todo) => todo._id === uuid)[0] || null;
   }
 
   setTodoToday(uuid: string): void {
