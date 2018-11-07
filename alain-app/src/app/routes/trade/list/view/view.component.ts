@@ -7,7 +7,7 @@ import { _HttpClient } from '@delon/theme';
   templateUrl: './view.component.html',
 })
 export class TradeListViewComponent implements OnInit {
-  record: any = {};
+  record: any = {id: 1};
   i: any;
 
   constructor(

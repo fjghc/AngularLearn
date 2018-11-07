@@ -3,6 +3,7 @@ import { _HttpClient, ModalHelper } from '@delon/theme';
 import { STColumn, STComponent } from '@delon/abc';
 import { SFSchema } from '@delon/form';
 import { TradeListEditComponent } from './edit/edit.component';
+import { TradeListViewComponent } from './view/view.component';
 
 @Component({
   selector: 'app-trade-list',
@@ -28,7 +29,7 @@ export class TradeListComponent implements OnInit {
     {
       title: '',
       buttons: [
-        { text: '查看', click: (item: any) => `/form/${item.id}` },
+        { text: '查看', click: (item: any) => this.view(item) },
         { text: '编辑', type: 'modal', component: TradeListEditComponent, click: 'reload' }
       ]
     }
@@ -42,6 +43,11 @@ export class TradeListComponent implements OnInit {
     this.modal
       .createStatic(TradeListEditComponent, { i: { id: 0 } })
       .subscribe(() => this.st.reload());
+  }
+
+  view(item: any) {
+    this.modal.createStatic(TradeListViewComponent, item)
+              .subscribe(() => this.st.reload());
   }
 
 }

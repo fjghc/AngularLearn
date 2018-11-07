@@ -8,7 +8,7 @@ import { SFSchema, SFUISchema } from '@delon/form';
   templateUrl: './edit.component.html',
 })
 export class TradeListEditComponent implements OnInit {
-  record: any = {};
+  record: any = {id: 1};
   i: any;
   schema: SFSchema = {
     properties: {
