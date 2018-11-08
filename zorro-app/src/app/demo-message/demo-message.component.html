@@ -1,0 +1,14 @@
+<h3>
+  Message 服务
+</h3>
+<button (click)="createMessage('success','asdfasdf');" nz-button nzType="default">Success</button>
+<button (click)="createMessage('error','asdfasdf');" nz-button nzType="danger">Error</button>
+<button (click)="createMessage('warning','asdfasdf');" nz-button nzType="dashed">Warning</button>
+
+<br>
+<h3>自带的消息Api</h3>
+<button (click)="message.info('123123');" nz-button>Info</button>
+<button (click)="message.success('success')" nz-button>Success</button>
+<button (click)="message.error('error')" nz-button>Error</button>
+<button (click)="message.warning('waring')" nz-button>Warning</button>
+<button (click)="message.loading('loading')" nz-button>Loading</button>

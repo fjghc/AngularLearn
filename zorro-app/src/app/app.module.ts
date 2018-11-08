@@ -14,6 +14,10 @@ import { RouterModule } from '@angular/router';
 import { DemoTreeSelectComponent } from './demo-tree-select/demo-tree-select.component';
 import { DemoCascaderComponent } from './demo-cascader/demo-cascader.component';
 import { DemoSliderComponent } from './demo-slider/demo-slider.component';
+import { DemoSwitchComponent } from './demo-switch/demo-switch.component';
+import { DemoTreeComponent } from './demo-tree/demo-tree.component';
+import { DemoMessageComponent } from './demo-message/demo-message.component';
+import { DemoModalComponent } from './demo-modal/demo-modal.component';
 
 
 registerLocaleData(zh);
@@ -24,7 +28,11 @@ registerLocaleData(zh);
     DemoButtonComponent,
     DemoTreeSelectComponent,
     DemoCascaderComponent,
-    DemoSliderComponent
+    DemoSliderComponent,
+    DemoSwitchComponent,
+    DemoTreeComponent,
+    DemoMessageComponent,
+    DemoModalComponent
   ],
   imports: [
     BrowserModule,

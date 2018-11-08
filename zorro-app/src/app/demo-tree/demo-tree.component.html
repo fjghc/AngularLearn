@@ -1,0 +1,11 @@
+<h3>可搜索的树</h3>
+
+<nz-input-group nzSearch [nzSuffix]="nameTpl">
+  <input nz-input [(ngModel)]="searchValue" placeholder="查询">
+  <ng-template #nameTpl>
+    <i nz-icon type="search"></i>
+  </ng-template>
+</nz-input-group>
+<nz-tree #treeCom [nzData]="nodes" [nzSearchValue]="searchValue" (nzClick)="nzEvent($event)" (nzSearchValueChange)="nzEvent($event)"
+  [nzDefaultExpandAll]="true" [nzCheckable]="true">
+</nz-tree>

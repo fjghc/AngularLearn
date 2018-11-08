@@ -1,0 +1,36 @@
+<h3>
+  基本对话框Modal
+</h3>
+<button nz-button [nzType]="'primary'" (click)="showModal();">显示
+</button>
+<nz-modal [(nzVisible)]="visiable" [nzTitle]="'标题'" [nzContent]="modalContent" [nzOkText]="'确定'" [nzCancelText]="'取消'"
+  (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)">
+  <ng-template #modalContent>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+  </ng-template>
+</nz-modal>
+
+
+<br>
+<h3>自定义对话框</h3>
+<button (click)="showModal2();" nz-button nzType="danger">自定义</button>
+<nz-modal [(nzVisible)]="visiable2" 
+[nzClosable]="true" [nzWidth]="520" [nzContent]="modalContent" [nzOkText]="'确定'"
+  [nzCancelText]="'取消'" [nzMaskClosable]="false" [nzWrapClassName]="''" 
+  [nzTitle]="header"
+  [nzFooter]="footer" >
+  <ng-template #header>
+    <h3>自定义标题</h3>
+    <p>Second Title</p>
+  </ng-template>
+  <ng-template #modalContent>对话框的内容</ng-template>
+  <ng-template #footer>
+    <button (click)="handleOk2()" nz-button>取消</button>
+    <button (click)="handleCancel2()" nz-button>确定</button>
+
+  </ng-template>
+</nz-modal>

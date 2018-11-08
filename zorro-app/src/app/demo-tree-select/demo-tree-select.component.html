@@ -7,7 +7,9 @@
 <nz-tree-select style="width:350px;"
  [nzDefaultExpandedKeys]='expandKeys' [nzDefaultExpandAll]="true" [nzAllowClear]="false"
   [nzShowSearch]='true' 
-  [nzNodes]="nodes" nzPlaceHolder="请选择" 
+  [nzDefaultExpandAll]='true'
+  [nzNodes]="nodes"
+  nzPlaceHolder="请选择" 
   [(ngModel)]="value" 
   [nzMultiple]="true"
   (ngModelChange)="onChange($event)">
