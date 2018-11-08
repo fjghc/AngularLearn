@@ -1,0 +1,27 @@
+<h3>最简单的TreeSelect树选择</h3>
+<nz-tree-select style="width:200px;" [nzDefaultExpandedKeys]='expandKeys' [nzShowSearch]='true' [nzNodes]="nodes"
+  nzPlaceHolder="请选择" [(ngModel)]="value" (ngModelChange)="onChange($event)">
+</nz-tree-select>
+
+<h3>多选择</h3>
+<nz-tree-select style="width:350px;"
+ [nzDefaultExpandedKeys]='expandKeys' [nzDefaultExpandAll]="true" [nzAllowClear]="false"
+  [nzShowSearch]='true' 
+  [nzNodes]="nodes" nzPlaceHolder="请选择" 
+  [(ngModel)]="value" 
+  [nzMultiple]="true"
+  (ngModelChange)="onChange($event)">
+</nz-tree-select>
+
+
+<h3>多选框模式</h3>
+
+<nz-tree-select style="width:350px;"
+ [nzDefaultExpandedKeys]='expandKeys' [nzDefaultExpandAll]="true" [nzAllowClear]="false"
+  [nzShowSearch]='true' 
+  [nzNodes]="nodes" nzPlaceHolder="请选择" 
+  [(ngModel)]="value" 
+  [nzCheckable]="true"
+  (ngModelChange)="onChange($event)">
+</nz-tree-select>
+
