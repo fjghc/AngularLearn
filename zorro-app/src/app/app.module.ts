@@ -12,6 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { DemoButtonComponent } from './demo-button/demo-button.component';
 import { RouterModule } from '@angular/router';
 import { DemoTreeSelectComponent } from './demo-tree-select/demo-tree-select.component';
+import { DemoCascaderComponent } from './demo-cascader/demo-cascader.component';
+import { DemoSliderComponent } from './demo-slider/demo-slider.component';
 
 
 registerLocaleData(zh);
@@ -20,7 +22,9 @@ registerLocaleData(zh);
   declarations: [
     AppComponent,
     DemoButtonComponent,
-    DemoTreeSelectComponent
+    DemoTreeSelectComponent,
+    DemoCascaderComponent,
+    DemoSliderComponent
   ],
   imports: [
     BrowserModule,
