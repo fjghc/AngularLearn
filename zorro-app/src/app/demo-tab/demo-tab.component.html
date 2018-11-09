@@ -1,0 +1,47 @@
+<h3>基本的Tab组件</h3>
+<nz-tabset>
+  <nz-tab nzTitle="Tab 1">
+    Content of Tab Pane 1
+  </nz-tab>
+  <nz-tab nzTitle="Tab 2">
+    Content of Tab Pane 2
+  </nz-tab>
+  <nz-tab nzTitle="Tab 3">
+    Content of Tab Pane 3
+  </nz-tab>
+</nz-tabset>
+
+<br>
+<h3>禁用某项</h3>
+<nz-tabset>
+  <nz-tab nzTitle="Tab 1">
+    Content of Tab Pane 1
+  </nz-tab>
+  <nz-tab nzTitle="Tab 2" [nzDisabled]='true'>
+    Content of Tab Pane 2
+  </nz-tab>
+  <nz-tab nzTitle="Tab 3">
+    Content of Tab Pane 3
+  </nz-tab>
+</nz-tabset>
+
+<br>
+<h3>带标签的Tab</h3>
+<nz-tabset>
+  <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
+    <ng-template #titleTemplate>
+      <i nz-icon [type]="tab.icon"></i>{{ tab.name }}
+    </ng-template>
+    {{tab.name}}
+  </nz-tab>
+</nz-tabset>
+<br>
+<h3>标签样式，带关闭按钮</h3>
+<nz-tabset [nzType]="'card'">
+  <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
+    <ng-template #titleTemplate>
+      <div>{{ tab.name }}<i nz-icon type="close" class="ant-tabs-close-x" (click)="closeTab(tab)"></i></div>
+    </ng-template>
+    {{tab.name}}
+  </nz-tab>
+</nz-tabset>

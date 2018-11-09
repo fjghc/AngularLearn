@@ -18,6 +18,8 @@ import { DemoSwitchComponent } from './demo-switch/demo-switch.component';
 import { DemoTreeComponent } from './demo-tree/demo-tree.component';
 import { DemoMessageComponent } from './demo-message/demo-message.component';
 import { DemoModalComponent } from './demo-modal/demo-modal.component';
+import { DemoTabComponent } from './demo-tab/demo-tab.component';
+
 
 
 registerLocaleData(zh);
@@ -32,7 +34,8 @@ registerLocaleData(zh);
     DemoSwitchComponent,
     DemoTreeComponent,
     DemoMessageComponent,
-    DemoModalComponent
+    DemoModalComponent,
+    DemoTabComponent
   ],
   imports: [
     BrowserModule,

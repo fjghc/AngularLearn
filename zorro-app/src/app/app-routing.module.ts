@@ -9,6 +9,7 @@ import { DemoSwitchComponent } from './demo-switch/demo-switch.component';
 import { DemoTreeComponent } from './demo-tree/demo-tree.component';
 import { DemoMessageComponent } from './demo-message/demo-message.component';
 import { DemoModalComponent } from './demo-modal/demo-modal.component';
+import { DemoTabComponent } from './demo-tab/demo-tab.component';
 
 const routes: Routes = [
   { path: 'button', component: DemoButtonComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'tree', component: DemoTreeComponent },
   { path: 'message', component: DemoMessageComponent },
   { path: 'modal', component: DemoModalComponent },
+  { path: 'tab', component: DemoTabComponent },
   { path: '', redirectTo: 'button', pathMatch: 'full' }
 ];
 
